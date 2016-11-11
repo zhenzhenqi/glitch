@@ -8,7 +8,7 @@ PImage img;
 color[] myColors;
 
 void setup() {
-  size(474, 600);
+  size(474, 586);
   img = loadImage("renee1.jpg");
   myColors = new color[100];
 
@@ -20,7 +20,7 @@ void setup() {
     for (int x = 0; x < width; x++ ) {
       int loc = x + y*width;
       // The functions red(), green(), and blue() pull out the three color components from a pixel.
-      float r = red(img.pixels [loc]); 
+      float r = red(img.pixels [loc]);
       float g = green(img.pixels[loc]);
       float b = blue(img.pixels[loc]);
 
@@ -39,6 +39,7 @@ void draw() {
 }
 
 void mousePressed() {
+  myColors = new color[mouseY]; // change length of glitch based on mouse Y position
   //println("pressed");
   int myX = mouseX;
   int myY = mouseY;
